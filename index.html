@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="data:,">
+  <title>Enter password</title>
+  <style>
+    body {
+      font-family: system-ui, sans-serif;
+      min-block-size: 100dvb;
+      margin: 0;
+      background: hsl(216deg 50% 98%);
+      color: hsl(216deg 50% 10%);
+      display: grid;
+      place-items: center;
+    }
+
+    label {
+      display: block;
+    }
+
+    input,
+    button {
+      font-size: 1rem;
+      padding-inline: 4px;
+      padding-block: 8px 6px;
+      border-radius: 4px;
+      border: 1px solid hsl(216deg 50% 80%);
+      transition: filter 600ms, border 600ms;
+    }
+
+    :is(input, button):focus-within,
+    button:hover {
+      border: 1px solid hsl(216deg 50% 70%);
+      filter: drop-shadow(0 0 4px hsl(216deg 50% 80%));
+      transition: filter 200ms, border 200ms;
+    }
+
+    button {
+      background: hsl(216deg 50% 90%);
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+  <main>
+    <form>
+      <label for="password">Password</label>
+      <input type="password" name="password" id="password" required>
+      <button>Unlock</button>
+    </form>
+  </main>
+
+  <script>
+  const content = ['fe+3M2BIo/MSkvMah1/EtC8//7NTSHt+9VS94TZ9GA9Nn2eLvdR1foUjUgsNHjPTlHhljNrJBlErS887eFXYsotekZb2c9j2O4G2+OJvJpUUNh1k26TIBWgEA3vdHVGKC92KrJl/ocP0tDZCKwCz76HdWv/pqlJ6bJTbFaqWdOa5KT9VMIeghTICe/0RXMyjb0GowObilzmdsLJnvCQrsikQadN9pI9YqM2owl409n00wPA3lkrvj9llwt9DGP5p/BNhhmxUM9wT46YzKeVX8nm4fvati3HmgvfQGVTPfjhondckon7XKqWMpbNEXOXuvuzRTPZ0+pB2xAOSXwSkjPhiGJ1vfzhMlxoYAI/3LdeEhZbkxFy8a+wqZQm2TKevplMVmWUWGQeyP7d4XzeEcJ2h4m/EMU9ajhkQYU7fmtpi4RUS7XRGk/Kwhd0cT6Gqex8D8hhgdUk7J8kP65Ks1DylQJ32ArNFm/MJ4vv8ECDEakVumPiPPfCN9/u2D8zLkY/fG7bn4b7A7wtlbTl1t7GoTGVs4k4bFe/Ige0mwhkzSWNCU4wtKoqkN0FEdZaGeSfzu4wxjXv4rx4MWNVBtimoTYKGqMetj6UHlqJvPliUJ1FKDNmmn2AxqRWh/6t8y7rQzhfsFdKCoEtmv5RTh+P0noF07QdMt7vmMRknDzxGsA2ndlbCemrL8AQBgNSS+am+NBDqM8FazW04SUNM7CdfU/YWk2+BNXPk1i269bfqlp181Rnzt8zmfOgG4/H14QS2/mO8WkMbRK6Uy1C3QxeTOKNkZdHoaDETt8P/mi/l/j3OakcPdDsEnZOeAWkzTRq/FJLfR6R/EKQGQsWjGpSIuVYApOExFCOw2kNDasRwKY0thcPtH0udKeH5MmLZvd2Lhq4v0zMK2zFlY+iyXW99slX++73yBzxhS3zF09fopsFLoVr6SkQeWAUlZwvsqTVUmDB1b6DNHKy7nXHhHqyyvxf6wS3JjLdDTlt0wbw2q57et17PQedZ9YHANhKzzRRHAP0nDLgMT+uHkik4MB7k3YibUdgNyPvlKRzgfdzXJIljuS5nFPaqWEimX6LV3qFgOhKZhFe2DwPPmQCU/Q7mBtlClNRMU29yJ0IX1mTVFt8+D8EQ0QQLfoOynn3gUViDjPn5rb/sZzzT28/VQsUQLxYJ3cPdBpSLwCnMIOe5es9ciP3ZHZQpv93a+R4osSu+GsWet7hkII4bOyzH//hzvXyUCNXLXCs6afPdEH+69jXctXw28nLtO2uTv44wmBpvK7LINVkrvRHQZinixQ535pJUGT8o6O6LBbiFmmdhFiMN1Jc2DdPkXhclR4GaHgkigzqOaAvYfSW6GhIs0BtA5OauVR2Vuovbo91ci0IOR5WXAHYpvepB4D6THeTuAEM69BGJFAbVueQYhLS2TrQjc/gBEDK6lEnNblSmx2CkyusenglbWiFcbX3BwZYnT2Idid8OdFmJvnLWVsIHQB63qzr/u8CwuvF5Fv3Otd8bOH1+q0oHPYHXnnOgSopMvkTdg6D9VYBLkXor+FpQumMghqopR3IhZeQVyL+hpD8qyo2+eKrKx/VLKlfvGySY1jkqXNy1xjDbXh4i9jva4M0IxO7PtM8vLx77x21sm7mp7Da+w+YrwLaJ0RBVFP0PHAtk+ne0GoUZRVCld6mp5qqG+NlHlZlNE1wX','2aECBHtr+NKiPTuIhp2oYpkrDPKOZso5/MpkfJd3eD6s4yeZSLVtK6x8vlRyaQRYeR/XEwd69a04qPKPc2c=','MwEri3AV8QpQBI8BCB2eYLfBzEUymkfJn1jD2Fu6ndBCsI77hLJbgvIg36LgEC3dc0bExdTZr5tLDUBCMTs=','jqLZlnLQjaoH+fBJkIx0BzCzsGzthy1KI3abUDCP+9VX2tIUSkQpmM5SqDVba5wlcjchBUZsWbtkRimDPIE='];
+  async function decrypt(content, password) {
+  const encoder = new TextEncoder();
+  const encodedPassword = encoder.encode(password);
+  const additionalData = encoder.encode('https://github.com/ardislu/static-encrypt');
+
+  const contentBuffer = Uint8Array.fromBase64(content);
+  const salt = new Uint8Array(32);
+  const iv = new Uint8Array(12);
+  const ciphertext = new Uint8Array(contentBuffer.byteLength - salt.byteLength - iv.byteLength);
+  salt.set(contentBuffer.slice(0, salt.byteLength));
+  iv.set(contentBuffer.slice(salt.byteLength, salt.byteLength + iv.byteLength));
+  ciphertext.set(contentBuffer.slice(salt.byteLength + iv.byteLength));
+
+  const keyMaterial = await crypto.subtle.importKey(
+    'raw',
+    encodedPassword,
+    'PBKDF2',
+    false,
+    ['deriveKey']
+  );
+
+  const key = await crypto.subtle.deriveKey(
+    {
+      name: 'PBKDF2',
+      hash: 'SHA-512',
+      salt,
+      iterations: 400_000
+    },
+    keyMaterial,
+    { name: 'AES-GCM', length: 256 },
+    false,
+    ['decrypt']
+  );
+
+  const encodedPlaintext = new Uint8Array(await crypto.subtle.decrypt(
+    { name: 'AES-GCM', iv, additionalData },
+    key,
+    ciphertext
+  ));
+
+  const plaintext = new TextDecoder().decode(encodedPlaintext);
+
+  return plaintext;
+}</script>
+  <script>
+    const input = document.querySelector('input');
+
+    document.querySelector('form').addEventListener('submit', async e => {
+      e.preventDefault();
+      const password = new FormData(e.target).get('password');
+      if (content.length<2) throw("not enough content objects in array.");
+        for (let i = 1; i < content.length; i++) {
+            var key;
+            try {
+            key = await decrypt(content[i],password);
+            const newDocument = await decrypt(content[0], key);
+            document.open();
+            document.write(newDocument);
+            document.close();
+            return;
+        } catch {}
+      }
+      input.setCustomValidity('Incorrect password.');
+      input.reportValidity();
+    });
+
+    input.addEventListener('input', e => e.target.setCustomValidity(''));
+  </script>
+</body>
+
+</html>
